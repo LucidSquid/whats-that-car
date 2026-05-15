@@ -14,17 +14,33 @@
 <body>
     <h1>What's That <span>Car?</span></h1>
     <p>Upload an image of a car or truck from 1950-2016 to detect its make and model.</p>
-    <div class="drop-input">
-        <div class="drop-icon-wrap">
-            <svg class="drop-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 20l6-6 6 6"></path>
-                <path d="M16 14v12"></path>
-                <rect x="4" y="6" width="24" height="20" rx="3"></rect>
-                <circle cx="22" cy="12" r="2"></circle>
-              </svg>
+    <div class="main-content">
+        <div class="drop-input">
+            <!-- Default state -->
+            <div id="default-state">
+                <div class="drop-icon-wrap">
+                    <svg class="drop-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10 20l6-6 6 6"></path>
+                        <path d="M16 14v12"></path>
+                        <rect x="4" y="6" width="24" height="20" rx="3"></rect>
+                        <circle cx="22" cy="12" r="2"></circle>
+                    </svg>
+                </div>
+                <div>Drop or paste your image here</div>
+                <p>Drag & drop, paste, or click to browse an image from your files.</p>
+            </div>
+        
+            <!-- Preview state -->
+            <div id="preview-state">
+                <img id="preview-image" src="" alt="Uploaded Image Preview">
+            </div>
         </div>
-        <div>Drop or paste your image here</div>
-        <p>Drag & drop, paste, or click to browse an image from your files.</p>
+        <div id="results">
+            <div class="spinner"></div>
+        
+        </div>
     </div>
+
+    <input type="file" id="file-input" accept="image/*">
 </body>
 </html>

@@ -39,24 +39,39 @@ p {
     line-height: 1.7;
 }
 
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .drop-input {
     width: fit-content;
-    margin: 3rem auto;
-    padding: 6rem 10rem;
+    margin: 3rem 6rem;
     background: var(--drop-input-bg);
-    border: 1.5px dashed var(--drop-input-border);
     border-radius: 20px;
-    transition: border-color 0.2s, background-color 0.2s;
+    transition: background-color 0.2s;
     cursor: pointer;
+}
+
+.drop-input:hover, .drop-input.drag-over {
+    background: color-mix(in srgb, var(--drop-input-bg), transparent 50%);
+}
+
+#default-state {
+    padding: 6rem 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    width: fit-content;
+    border: 1.5px dashed var(--drop-input-border);
+    transition: border-color 0.2s;
+    border-radius: 20px;
 }
 
-.drop-input:hover {
+#default-state:hover, .drag-over #default-state {
     border-color: var(--accent);
-    background: color-mix(in srgb, var(--drop-input-bg), transparent 50%);
 }
 
 .drop-input div {
@@ -83,4 +98,44 @@ p {
     width: 48px;
     height: 48px;
     color: var(--accent);
+}
+
+#preview-state {
+    display: none;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+}
+
+#preview-state:hover img {
+    opacity: 0.85;
+}
+
+#preview-image {
+    height: 400px;
+    max-width: 650px;
+    border-radius: 20px;
+    transition: opacity 0.2s;
+}
+
+#results {
+    display: none;
+    width: 25%;
+}
+
+.spinner {
+    width: 4rem;
+    height: 4rem;
+    margin-left: 8rem;
+    border: 2px solid var(--drop-input-border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Hide the file input */
+#file-input {
+    display: none;
 }
