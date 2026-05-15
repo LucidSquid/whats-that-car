@@ -1,0 +1,86 @@
+:root {
+    --bg: #0A0A0A; /* Jet Black background */
+    --title: #F5F5F0;
+    --text: #888880;
+    --drop-input-bg: #141414;
+    --drop-input-border: rgba(255,255,255,0.18);
+    --drop-icon-bg: #1E1E1E;
+    --accent: #0066FF;
+    --success: #3DFF8F;
+    --error: #FF4D4D;
+}
+
+body {
+    background: var(--bg);
+    color: var(--title);
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 5rem;
+    letter-spacing: 0.04em;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+}
+
+h1 span {
+    font-family: "Leckerli One", cursive;
+    color: var(--accent);
+    display: block;
+}
+
+p {
+    font-size: 17px;
+    color: var(--text);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.drop-input {
+    width: fit-content;
+    margin: 3rem auto;
+    padding: 6rem 10rem;
+    background: var(--drop-input-bg);
+    border: 1.5px dashed var(--drop-input-border);
+    border-radius: 20px;
+    transition: border-color 0.2s, background-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.drop-input:hover {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--drop-input-bg), transparent 50%);
+}
+
+.drop-input div {
+    font-size: 1.2rem;
+}
+
+.drop-input p {
+    font-size: 0.9rem;
+    max-width: 288px;
+}
+
+.drop-icon-wrap {
+    width: 72px;
+    height: 72px;
+    background: var(--drop-icon-bg);
+    border: 1px solid var(--drop-input-border);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--accent);
+}
