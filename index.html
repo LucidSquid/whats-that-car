@@ -9,7 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Leckerli+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <!-- Global browser script (no type="module") -->
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.26.0/dist/ort.min.js"></script>
+    <!-- ES module script -->
+    <script type="module" src="script.js"></script>
 </head>
 <body>
     <h1>What's That <span>Car?</span></h1>
@@ -29,15 +32,24 @@
                 <div>Drop or paste your image here</div>
                 <p>Drag & drop, paste, or click to browse an image from your files.</p>
             </div>
-        
             <!-- Preview state -->
             <div id="preview-state">
                 <img id="preview-image" src="" alt="Uploaded Image Preview">
             </div>
         </div>
-        <div id="results">
+
+        <div id="result-spinner">
             <div class="spinner"></div>
-        
+        </div>
+        <div id="results">
+            <div class="result">
+                <div class="make title">Make</div>
+                <div class="make value" id="make-value">Toyota</div>
+            </div>
+            <div class="result">
+                <div class="make title">Model</div>
+                <div class="make value" id="model-value">Corolla</div>
+            </div>
         </div>
     </div>
 
